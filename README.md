@@ -28,3 +28,42 @@ This project implements a simple **object detection system** that performs **dig
 
 ## 📂 Project Structure
 
+├── ObjectDetection.py
+├── README.md
+└── .gitignore
+
+
+---
+
+## 📊 Dataset
+
+- **MNIST** dataset loaded using `tensorflow_datasets`
+- Digits are randomly placed inside a 75×75 image
+- Model predicts:
+  - Digit class (classification)
+  - Bounding box coordinates (regression)
+
+---
+
+## 🧠 Model Architecture
+
+- Convolution + Average Pooling layers
+- Shared feature extractor
+- Two output heads:
+  - **Classification head** (Softmax)
+  - **Bounding box head** (MSE loss)
+
+Loss Functions:
+- Classification: `categorical_crossentropy`
+- Bounding Box: `mean squared error`
+
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Install dependencies
+```bash
+pip install tensorflow tensorflow-datasets numpy matplotlib pillow
+
+2️⃣ Run the script
+python ObjectDetection.py
